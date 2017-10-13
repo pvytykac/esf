@@ -71,22 +71,6 @@ public final class Organization {
         return attributes;
     }
 
-    @Override
-    public String toString() {
-        return "Organization{" +
-                "id=" + id +
-                ", ico='" + ico + '\'' +
-                ", name='" + name + '\'' +
-                ", form=" + form +
-                ", created=" + created +
-                ", ceased=" + ceased +
-                ", address='" + address + '\'' +
-                ", district=" + district +
-                ", territory=" + territory +
-                ", attributes=" + attributes +
-                '}';
-    }
-
     public static class Enumerated {
         private final String id;
         private final String value;
@@ -104,13 +88,6 @@ public final class Organization {
             return value;
         }
 
-        @Override
-        public String toString() {
-            return "Enumerated{" +
-                    "id='" + id + '\'' +
-                    ", value='" + value + '\'' +
-                    '}';
-        }
     }
 
     public static class OrganizationBuilder {

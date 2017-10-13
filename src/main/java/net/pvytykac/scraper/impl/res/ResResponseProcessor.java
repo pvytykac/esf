@@ -13,7 +13,6 @@ import org.w3c.dom.NodeList;
 import javax.xml.xpath.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import static net.pvytykac.scraper.impl.res.Organization.OrganizationBuilder;
@@ -24,7 +23,6 @@ import static net.pvytykac.scraper.impl.res.Organization.OrganizationBuilder;
  */
 public final class ResResponseProcessor implements ResponseProcessor<Organization> {
 
-    private static final Date MAX_DATE;
     private static XPathExpression IdXp;
     private static XPathExpression IcoXp;
     private static XPathExpression NameXp;
@@ -37,7 +35,6 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
     private static XPathExpression ZujcXp;
     private static XPathExpression ZujXp;
     private static XPathExpression AttrXp;
-    private final SimpleDateFormat SDF = new SimpleDateFormat("dd.MM.yyyy");
 
     static {
         try {
@@ -54,10 +51,6 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
             ZujcXp = xpf.compile("//table[@summary='adresa-kody']/tr[2]/td[last() - 2 ]");
             ZujXp = xpf.compile("//table[@summary='adresa-kody']/tr[2]/td[last()]");
             AttrXp = xpf.compile("//table[@summary='atributy']/tr[position() > 1]");
-
-            Calendar calendar = Calendar.getInstance();
-            calendar.add(Calendar.DATE, 30);
-            MAX_DATE = calendar.getTime();
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
@@ -81,41 +74,37 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
                     Date created = parseDate(FromXp.evaluate(document));
                     Date ceased = parseDate(ToXp.evaluate(document));
 
-                    if (created != null && created.after(MAX_DATE) || ceased != null && ceased.after(MAX_DATE)) {
-                        result = new ScrapeResult<>(new ScrapeResult.ScrapeError(5, "date in future"));
-                    } else {
-                        OrganizationBuilder organization = new OrganizationBuilder()
-                                .setId(Integer.valueOf(id.substring(id.indexOf("prajed_id=") + 10).split("&")[0]))
-                                .setIco(ico)
-                                .setName(NameXp.evaluate(document))
-                                .setForm(form[0], form[1])
-                                .setAddress(AddrXp.evaluate(document))
-                                .setCreated(created)
-                                .setCeased(ceased)
-                                .setDistrict(DcXp.evaluate(document), DXp.evaluate(document))
-                                .setTerritory(ZujcXp.evaluate(document), ZujXp.evaluate(document));
+                    OrganizationBuilder organization = new OrganizationBuilder()
+                            .setId(Integer.valueOf(id.substring(id.indexOf("prajed_id=") + 10).split("&")[0]))
+                            .setIco(ico)
+                            .setName(NameXp.evaluate(document))
+                            .setForm(form[0], form[1])
+                            .setAddress(AddrXp.evaluate(document))
+                            .setCreated(created)
+                            .setCeased(ceased)
+                            .setDistrict(DcXp.evaluate(document), DXp.evaluate(document))
+                            .setTerritory(ZujcXp.evaluate(document), ZujXp.evaluate(document));
 
-                        NodeList attrNodeSet = (NodeList) AttrXp.evaluate(document, XPathConstants.NODESET);
-                        String prevAttr = null;
-                        for (int i = 0; i < attrNodeSet.getLength(); i++) {
-                            Node node = attrNodeSet.item(i);
+                    NodeList attrNodeSet = (NodeList) AttrXp.evaluate(document, XPathConstants.NODESET);
+                    String prevAttr = null;
+                    for (int i = 0; i < attrNodeSet.getLength(); i++) {
+                        Node node = attrNodeSet.item(i);
 
-                            String attr = node.getChildNodes().item(1).getTextContent();
-                            String code = node.getChildNodes().item(3).getTextContent();
-                            String value = node.getChildNodes().item(5).getTextContent();
-                            organization.addAttributes(StringUtils.isBlank(attr) ? prevAttr : attr.trim(), code.trim(), value.trim());
+                        String attr = node.getChildNodes().item(1).getTextContent().trim();
+                        String code = node.getChildNodes().item(3).getTextContent().trim();
+                        String value = node.getChildNodes().item(5).getTextContent().trim();
+                        organization.addAttributes(StringUtils.isBlank(attr) ? prevAttr : attr, code, value);
 
-                            if ("Statistická právní forma".equalsIgnoreCase(attr) && form[0] == null) {
-                                organization.setForm(code, value);
-                            }
-
-                            if (!StringUtils.isBlank(attr)) {
-                                prevAttr = attr.trim();
-                            }
+                        if ("Činnosti - dle CZ-NACE".equalsIgnoreCase(attr) && form[0] == null) {
+                            organization.setForm(code, value);
                         }
 
-                        result = new ScrapeResult<>(organization.build());
+                        if (!StringUtils.isBlank(attr)) {
+                            prevAttr = attr.trim();
+                        }
                     }
+
+                    result = new ScrapeResult<>(organization.build());
                 }
             } catch (XPathExpressionException ex) {
                 result = new ScrapeResult<>(new ScrapeResult.ScrapeError(0, "xpath error"));
@@ -130,7 +119,7 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
     }
 
     private Date parseDate(String date) throws ParseException {
-        return StringUtils.isBlank(date) ? null : SDF.parse(date);
+        return StringUtils.isBlank(date) ? null : new SimpleDateFormat("dd.MM.yyyy").parse(date);
     }
 
     private static String[] split(String original, String separator, int size) {

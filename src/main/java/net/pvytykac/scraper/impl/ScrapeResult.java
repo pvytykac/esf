@@ -49,7 +49,7 @@ public final class ScrapeResult<T> {
      * @return scraped object if scraping was successful
      * @throws IllegalStateException if scraping failed
      */
-    T getResult() {
+    public T getResult() {
         Preconditions.checkState(!isError(), "the scrape result failed");
         return result;
     }
