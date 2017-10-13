@@ -8,8 +8,8 @@ import net.pvytykac.scraper.ScrapeResultHandler;
  */
 public final class ResScrapeResultHandler implements ScrapeResultHandler<Organization> {
 
-    @Override
-    public void handleResult(Organization result) {
+	@Override
+	public void handleResult(Organization result) {
+	}
 
-    }
 }

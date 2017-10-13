@@ -1,7 +1,7 @@
 package net.pvytykac.scraper.impl.res;
 
-import net.pvytykac.http.ResponseUtil;
 import net.pvytykac.scraper.ResponseProcessor;
+import net.pvytykac.scraper.http.ResponseUtil;
 import net.pvytykac.scraper.impl.ScrapeResult;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpResponse;
@@ -37,7 +37,7 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
     private static XPathExpression ZujcXp;
     private static XPathExpression ZujXp;
     private static XPathExpression AttrXp;
-    private static final SimpleDateFormat SDF = new SimpleDateFormat("dd.MM.yyyy");
+    private final SimpleDateFormat SDF = new SimpleDateFormat("dd.MM.yyyy");
 
     static {
         try {
@@ -129,7 +129,7 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
         return result;
     }
 
-    private static Date parseDate(String date) throws ParseException {
+    private Date parseDate(String date) throws ParseException {
         return StringUtils.isBlank(date) ? null : SDF.parse(date);
     }
 
