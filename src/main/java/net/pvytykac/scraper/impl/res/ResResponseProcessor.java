@@ -23,18 +23,18 @@ import static net.pvytykac.scraper.impl.res.Organization.OrganizationBuilder;
  */
 public final class ResResponseProcessor implements ResponseProcessor<Organization> {
 
-    private static XPathExpression IdXp;
-    private static XPathExpression IcoXp;
-    private static XPathExpression NameXp;
-    private static XPathExpression SpfXp;
-    private static XPathExpression FromXp;
-    private static XPathExpression ToXp;
-    private static XPathExpression AddrXp;
-    private static XPathExpression DcXp;
-    private static XPathExpression DXp;
-    private static XPathExpression ZujcXp;
-    private static XPathExpression ZujXp;
-    private static XPathExpression AttrXp;
+    private static final XPathExpression IdXp;
+    private static final XPathExpression IcoXp;
+    private static final XPathExpression NameXp;
+    private static final XPathExpression SpfXp;
+    private static final XPathExpression FromXp;
+    private static final XPathExpression ToXp;
+    private static final XPathExpression AddrXp;
+    private static final XPathExpression DcXp;
+    private static final XPathExpression DXp;
+    private static final XPathExpression ZujcXp;
+    private static final XPathExpression ZujXp;
+    private static final XPathExpression AttrXp;
 
     static {
         try {

@@ -1,6 +1,7 @@
 package net.pvytykac.scraper;
 
 import net.pvytykac.scraper.impl.ScrapeJob;
+import net.pvytykac.scraper.impl.justice.JusticeScrapingStrategy;
 import net.pvytykac.scraper.impl.res.Organization;
 import net.pvytykac.scraper.impl.res.ResScrapingStrategy;
 
@@ -22,7 +23,8 @@ public final class Main {
     });
 
     public static void main(String[] args) {
-        ScrapeJob<Organization> resJob = new ScrapeJob<>(new ResScrapingStrategy(), 10);
-        POOL.submit(resJob::loop);
+//        ScrapeJob<Organization> resJob = new ScrapeJob<>(new ResScrapingStrategy(), 10);
+        ScrapeJob<net.pvytykac.scraper.impl.justice.Organization> justiceJob = new ScrapeJob<>(new JusticeScrapingStrategy(), 10);
+        POOL.submit(justiceJob::loop);
     }
 }
