@@ -1,0 +1,226 @@
+1244 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 76 documents for subjectId: 411975
+1259 [I/O dispatcher 1] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 411975
+1455 [I/O dispatcher 2] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00008851
+1534 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 91 documents for subjectId: 652649
+1815 [I/O dispatcher 2] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 695310
+11384 [I/O dispatcher 1] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 652649
+11855 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 19 documents for subjectId: 695310
+11980 [I/O dispatcher 2] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 411975
+21427 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00000078
+21599 [I/O dispatcher 1] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 652649
+22040 [I/O dispatcher 2] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 695310
+31728 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 93 documents for subjectId: 411847
+31916 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00000850
+32009 [I/O dispatcher 1] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 411975
+32119 [I/O dispatcher 2] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 411847
+42143 [I/O dispatcher 1] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 652649
+42221 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 66 documents for subjectId: 411348
+42481 [I/O dispatcher 2] WARN  net.pvytykac.async.DetailCallback - Retrying: Detail could not be retrieved for subjectId: 695310
+1045 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00008851
+1132 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00008851
+1195 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00000078
+1242 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00000850
+1773 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 91 documents for subjectId: 652649
+1773 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 76 documents for subjectId: 411975
+1789 [I/O dispatcher 2] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 652649
+java.lang.UnsupportedOperationException: executeLargeBatch not implemented
+	at java.sql.Statement.executeLargeBatch(Statement.java:1197)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+1804 [I/O dispatcher 1] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 411975
+java.lang.UnsupportedOperationException: executeLargeBatch not implemented
+	at java.sql.Statement.executeLargeBatch(Statement.java:1197)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+11882 [I/O dispatcher 2] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00009016
+11928 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 19 documents for subjectId: 695310
+11928 [I/O dispatcher 2] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 695310
+java.lang.UnsupportedOperationException: executeLargeBatch not implemented
+	at java.sql.Statement.executeLargeBatch(Statement.java:1197)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+12140 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 93 documents for subjectId: 411847
+12140 [I/O dispatcher 1] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 411847
+java.lang.UnsupportedOperationException: executeLargeBatch not implemented
+	at java.sql.Statement.executeLargeBatch(Statement.java:1197)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+22224 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 66 documents for subjectId: 411348
+22224 [I/O dispatcher 2] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 411348
+java.lang.UnsupportedOperationException: executeLargeBatch not implemented
+	at java.sql.Statement.executeLargeBatch(Statement.java:1197)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+22305 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 38 documents for subjectId: 715248
+22307 [I/O dispatcher 1] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 715248
+java.lang.UnsupportedOperationException: executeLargeBatch not implemented
+	at java.sql.Statement.executeLargeBatch(Statement.java:1197)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+1211 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 76 documents for subjectId: 411975
+1602 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 91 documents for subjectId: 652649
+1633 [I/O dispatcher 2] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00008851
+1805 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 19 documents for subjectId: 695310
+1852 [I/O dispatcher 2] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00000078
+1977 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 93 documents for subjectId: 411847
+2300 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 66 documents for subjectId: 411348
+2316 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00000850
+2519 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 86 documents for subjectId: 55727
+2738 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 38 documents for subjectId: 715248
+2925 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 93 documents for subjectId: 683743
+2972 [I/O dispatcher 1] WARN  net.pvytykac.async.SearchCallback - No entry found for ICO: 00009016
+3170 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 72 documents for subjectId: 704071
+3434 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 58 documents for subjectId: 539060
+3512 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 32 documents for subjectId: 704096
+3653 [I/O dispatcher 2] ERROR net.pvytykac.async.DetailCallback - Exception processing detail for subjectId: 707167
+com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'form' at row 1
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3489)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3423)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1936)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2060)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2542)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1734)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:995)
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:198)
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:198)
+	at net.pvytykac.async.DaoImpl.upsertJusticeOrganization(DaoImpl.java:84)
+	at net.pvytykac.async.DetailCallback.completed(DetailCallback.java:111)
+	at net.pvytykac.async.DetailCallback.completed(DetailCallback.java:23)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+3856 [I/O dispatcher 1] WARN  net.pvytykac.async.DocsCallback - parsed 24 documents for subjectId: 707167
+4163 [I/O dispatcher 1] ERROR net.pvytykac.async.DocsCallback - Exception when processing documents for subjectId: 707167
+java.sql.BatchUpdateException: Cannot add or update a child row: a foreign key constraint fails (`res_data`.`justice_document`, CONSTRAINT `document_org_fk` FOREIGN KEY (`org_id`) REFERENCES `justice_organization` (`id`))
+	at com.mysql.jdbc.PreparedStatement.executeBatchSerially(PreparedStatement.java:1666)
+	at com.mysql.jdbc.PreparedStatement.executeBatch(PreparedStatement.java:1082)
+	at org.apache.commons.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at org.apache.commons.dbcp2.DelegatingStatement.executeBatch(DelegatingStatement.java:345)
+	at net.pvytykac.async.DaoImpl.upsertJusticeDocuments(DaoImpl.java:111)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:81)
+	at net.pvytykac.async.DocsCallback.completed(DocsCallback.java:27)
+	at org.apache.http.concurrent.BasicFuture.completed(BasicFuture.java:119)
+	at org.apache.http.impl.nio.client.DefaultClientExchangeHandlerImpl.responseCompleted(DefaultClientExchangeHandlerImpl.java:181)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.processResponse(HttpAsyncRequestExecutor.java:437)
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.inputReady(HttpAsyncRequestExecutor.java:327)
+	at org.apache.http.impl.nio.DefaultNHttpClientConnection.consumeInput(DefaultNHttpClientConnection.java:265)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:81)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onInputReady(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.inputReady(AbstractIODispatch.java:121)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.readable(BaseIOReactor.java:162)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvent(AbstractIOReactor.java:337)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.processEvents(AbstractIOReactor.java:315)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:276)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:588)
+	at java.lang.Thread.run(Thread.java:748)
+13799 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 0 documents for subjectId: 704044
+14011 [I/O dispatcher 2] WARN  net.pvytykac.async.DocsCallback - parsed 80 documents for subjectId: 473760

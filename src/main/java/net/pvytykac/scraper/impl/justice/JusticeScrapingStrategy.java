@@ -13,14 +13,13 @@ import net.pvytykac.scraper.impl.Scrape;
 
 public class JusticeScrapingStrategy implements ScrapingStrategy<Organization> {
 
-	private final AtomicInteger idGenerator = new AtomicInteger(0);
+	private final AtomicInteger idGenerator = new AtomicInteger(94183);
 	private final ResponseProcessor<Organization> rp = new JusticeResponseProcessor();
-	private final List<ScrapeResultHandler<Organization>> handlers = ImmutableList.of(
-			result -> System.out.println(result));
+	private final List<ScrapeResultHandler<Organization>> handlers = ImmutableList.of(new JusticeScrapeResultHandler());
 
 	@Override
 	public boolean isDone() {
-		return idGenerator.get() < 10000000;
+		return idGenerator.get() > 10000000;
 	}
 
 	@Override

@@ -4,6 +4,8 @@ import net.pvytykac.scraper.impl.ScrapeJob;
 import net.pvytykac.scraper.impl.justice.JusticeScrapingStrategy;
 import net.pvytykac.scraper.impl.res.Organization;
 import net.pvytykac.scraper.impl.res.ResScrapingStrategy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,6 +16,7 @@ import java.util.concurrent.Executors;
  */
 public final class Main {
 
+    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
     private static final ThreadGroup TG = new ThreadGroup("scrape-job-pool");
     private static final ExecutorService POOL = Executors.newCachedThreadPool(runnable -> {
         Thread thread = new Thread(TG, runnable);

@@ -35,6 +35,10 @@ public final class Organization {
         this.attributes = attributes;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getIco() {
         return ico;
     }

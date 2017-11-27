@@ -1,10 +1,6 @@
 package net.pvytykac.scraper.impl.res;
 
 import net.pvytykac.scraper.impl.ScrapeResult;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.StatusLine;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
@@ -12,9 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertFalse;
+import static net.pvytykac.scraper.TestUtil.mockResponse;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 /**
  * @author Paly
@@ -28,7 +23,7 @@ public class ResResponseProcessorTest {
 
     @Test
     public void processResponseStatusOkHasData() throws Exception {
-        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(200, "organization_response.html"));
+        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(200, "res/organization_response.html", "windows-1250"));
 
         assertNotNull(result);
         assertFalse(result.isError());
@@ -82,7 +77,7 @@ public class ResResponseProcessorTest {
 
     @Test
     public void processResponseStatusOkNoData() throws Exception {
-        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(200, "empty_response.html"));
+        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(200, "res/empty_response.html", "windows-1250"));
 
         assertNotNull(result);
         assertTrue(result.isError());
@@ -94,7 +89,7 @@ public class ResResponseProcessorTest {
     // if form is empty, first CZ-NACE should be stored instead
     @Test
     public void processResponseStatusOkEmptyForm() throws Exception {
-        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(200, "empty_form_response.html"));
+        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(200, "res/empty_form_response.html", "windows-1250"));
 
         assertNotNull(result);
         assertFalse(result.isError());
@@ -108,7 +103,7 @@ public class ResResponseProcessorTest {
 
     @Test
     public void processResponseStatusTemporarilyUnavailable() throws Exception {
-        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(503, "empty_form_response.html"));
+        ScrapeResult<Organization> result = rrp.processResponse(mockResponse(503, "res/empty_form_response.html", "windows-1250"));
 
         assertNotNull(result);
         assertTrue(result.isError());
@@ -120,24 +115,5 @@ public class ResResponseProcessorTest {
                                                                   String key) throws Exception {
         assertTrue(attributes.containsKey(key));
         return attributes.get(key);
-    }
-
-    private static HttpResponse mockResponse(int status, String document) throws Exception {
-        HttpResponse response = mock(HttpResponse.class);
-        HttpEntity entity = mock(HttpEntity.class);
-        StatusLine statusLine = mock(StatusLine.class);
-        Header contentType = mock(Header.class);
-
-        when(statusLine.getStatusCode()).thenReturn(status);
-
-        when(contentType.getValue()).thenReturn("text/html; charset=windows-1250");
-
-        when(entity.getContentType()).thenReturn(contentType);
-        when(entity.getContent()).thenReturn(ResResponseProcessorTest.class.getClassLoader().getResourceAsStream(document));
-
-        when(response.getStatusLine()).thenReturn(statusLine);
-        when(response.getEntity()).thenReturn(entity);
-
-        return response;
     }
 }

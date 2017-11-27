@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="cs" class="ff ff61">
+<head><script type="text/javascript" src="./wicket/resource/org.apache.wicket.resource.JQueryResourceReference/jquery/jquery-1.11.1.min-ver-8101D596B2B8FA35FE3A634EA342D7C3.js"></script>
+
+    <title>Veřejný rejstřík a Sbírka listin - Ministerstvo spravedlnosti České republiky</title>
+
+    <link rel="shortcut icon" href="./resource/images/favicon.ico" type="image/x-icon">
+
+    <!--
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+     -->
+
+    <link rel="stylesheet" href="./resource/css/reset.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/base.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/layout.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/drop-down-menu.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/columns.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/tables.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/forms.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/buttons.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/messages.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/icons.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/typo.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/search.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/vypis.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/tooltip.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/ias.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/ajax.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/intform.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/dynamic.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/jquery-ui-1.8.17.custom.css" media="screen">
+
+    <link rel="stylesheet" href="./resource/css/print.css" media="print">
+
+    <script src="./resource/js/modernizr-latest.js"></script><!-- feature detection -->
+
+    <script>
+/*<![CDATA[*/
+
+			var APP = {
+				_ready : [],
+				_load : [],
+				run : function(fn,onload){var q=APP[onload?'_load':'_ready'];if(fn){if(q&&typeof q.push==='function'){q.push(fn);}else{fn();}}}
+			};
+
+/*]]>*/
+</script>
+    <script>
+/*<![CDATA[*/
+
+			APP.Strings = {
+				invalidAjaxResponse : 'CHYBA - při zpracování požadavku došlo k interní chybě.'
+			};
+
+/*]]>*/
+</script>
+
+    <script src="./resource/js/app-ias.js"></script>
+    <script src="./resource/js/app-tools.js"></script>
+    <script src="./resource/js/modules/drop-down-menu.js"></script>
+    <script src="./resource/js/modules/placeholder.js"></script>
+    <script src="./resource/js/modules/tooltip.js"></script>
+    <script src="./resource/js/modules/message-panel.js"></script>
+
+    <style type="text/css">
+/*<![CDATA[*/
+
+			/* CSS pre nove vypisy */
+			div.vr-hlavicka{font-weight:bold;}
+			.vr-child .vr-child div.vr-child {margin-left: 5mm}
+			.vr-child .vr-child div.vr-hlavicka {margin-left: 5mm}
+			.underline span {border-bottom: 1px solid black;}
+			.underline .nounderline {border-bottom-style: none}
+			.preformatted { white-space: pre-wrap; }
+
+/*]]>*/
+</style>
+
+    <!--[if lte IE 6 ]>
+    <script src="./resource/js/supersleight-min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-event-jquery.min-ver-7C4C4A31B92F211E7D61B1BF2BA81B39.js"></script>
+    <script type="text/javascript" src="./wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-ajax-jquery.min-ver-116260811FE9679D5DDCC60F7AE641BD.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./wicket/resource/cz.corpus.isror.ui.internet.InternetBasePage/basepage-ver-F0FB650D42CA79C149B4023B5F69BE5C.css" />
+    <script type="text/javascript" src="./wicket/resource/cz.corpus.grools.function.JavaScriptFunction/lib-ver-C67402F14ACFBAEEEE527DB7DC257D44.js"></script>
+    <script type="text/javascript" src="./wicket/resource/cz.corpus.isror.ui.internet.analytics.GoogleAnalyticsJs/google-analytics.js"></script>
+</head>
+<body>
+<div id="page">
+    <div id="page-h" class="noprint">
+        <a id="logo" href="./rejstrik-firma.vysledky?-1.ILinkListener-htmlContainer-logo&amp;subjektId=2&amp;typ=PLATNY"></a>
+        <hr class="hidden">
+    </div>
+    <div id="page-c">
+        <div id="frag-rejstrik-switchComp-wholebead">
+
+
+
+            <div class="section">
+                <div class="vypis-h noprint">
+                    <div class="inner">
+
+                        <h1>
+                            <span>Výpis</span> z <span>veřejného rejstříku</span>
+                        </h1>
+                        <h2>
+                            <span></span>, <span></span> <span></span> vedená u <span></span>
+                        </h2>
+
+                        <a class="vypis-print" onclick="print(); return false;" href="#">Vytisknout</a>
+                    </div>
+                </div>
+                <div class="section-c vypis-c">
+                    <div class="inner">
+                        <p class="noprint">
+                            <a href="./rejstrik-$firma?ico=00409430"><span>Zpět na výsledky hledání</span></a>
+                        </p>
+                        <div class="vypis-header print">
+                            <h2 class="center">Výpis</h2>
+                            <p class="center">
+                                z <span>veřejného rejstříku</span>, vedeného<br />
+                                <span></span><br /> oddíl <span></span>, vložka <span></span>
+                            </p>
+                        </div>
+                        <div>
+
+                            <div style="page-break-after: avoid">
+
+                                <div class="aunp-content">
+                                    <div class="aunp-udajPanel">
+                                        <div class="vr-hlavicka"><hr/></div>
+                                        <div class="div-table">
+                                            <div class="div-row">
+                                                <div class="div-cell w45mm">
+                                                    <div class="vr-hlavicka">Datum vzniku a zápisu:</div>
+                                                </div>
+                                                <div class="div-cell">
+                                                    <div>9. června 1995</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <table style="width:100%;">
+                                            <tr>
+                                                <td style="width:45mm; vertical-align:top;"><div class="vr-hlavicka" wicket:id="label">Datum zápisu:</div></td>
+                                                <td><div wicket:id="value"/></td>
+                                            </tr>
+                                        </table> -->
+
+                                    </div><div class="aunp-udajPanel">
+                                    <div class="vr-hlavicka"><hr/></div>
+                                    <div class="div-table">
+                                        <div class="div-row">
+                                            <div class="div-cell w45mm">
+                                                <div class="vr-hlavicka">Datum výmazu:</div>
+                                            </div>
+                                            <div class="div-cell">
+                                                <div>9. července 2003</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <table style="width:100%;">
+                                        <tr>
+                                            <td style="width:45mm; vertical-align:top;"><div class="vr-hlavicka" wicket:id="label">Datum zápisu:</div></td>
+                                            <td><div wicket:id="value"/></td>
+                                        </tr>
+                                    </table> -->
+
+                                </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fr noprint">
+                            <a class="vypis-pdf" href="./print-pdf?subjektId=2&amp;typVypisu=PLATNY&amp;full=false">Stáhnout PDF verzi výpisu</a>
+                        </p>
+                        <p>
+                            <strong>Tento výpis je neprodejný a byl pořízen na
+                                Internetu</strong> (<a href="http://www.justice.cz/">http://www.justice.cz</a>).<br/>
+                            Dne: <span>12.11.2017 11:16</span><br/> Údaje platné ke dni <span>12.11.2017 06:19</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="page-f" class="noprint">
+        <div id="page-f-links">
+            <ul class="links1">
+                <li><a href="./napoveda">Jak na to?</a></li>
+                <li><a href="./podminky">Podmínky provozu</a></li>
+                <li><a href="./soudy">Rejstříkové soudy</a></li>
+                <li><a
+                        href="http://upadci.justice.cz/cgi-bin/sqw1250.cgi/upkuk/s_i8.sqw">Evidence
+                    úpadců</a></li>
+                <li><a href="https://isir.justice.cz/isir/common/index.do">Insolvenční
+                    rejstřík</a></li>
+            </ul>
+            <ul class="links2">
+                <li><a href="./rejstrik-$firma">Veřejný rejstřík podle
+                    subjektů</a></li>
+                <li><a href="./rejstrik-$spolecnici">Veřejný rejstřík podle
+                    právnických osob v angažmá</a></li>
+                <li><a href="./rejstrik-$osoba">Veřejný rejstřík podle
+                    fyzických osob v angažmá</a></li>
+                <li><a href="./zr">Automatické aktualizace ze
+                    základních registrů</a></li>
+                <li><a href="./podani">Podání do veřejného rejstříku</a></li>
+            </ul>
+            <ul class="links3">
+                <li><a href="./evypisy">Co s elektronickým výpisem</a></li>
+                <li><a href="http://www.businessinfo.cz/">Portál pro
+                    podnikatele: BusinessInfo.cz</a></li>
+                <li><a
+                        href="http://www.businessinfo.cz/cs/clanky/obchodni-spolecnosti-zalozeni-vznik-opu-13164.html">Průvodce:
+                    Jak založit firmu / společnost</a></li>
+                <li><a
+                        href="http://www.komora.cz/hk-cr/inmp/lang_1/Default.aspx">Informační
+                    místa pro podnikatele</a></li>
+                <li><a href="./podpora">Technická podpora</a></li>
+            </ul>
+        </div>
+        <span id="footer-logo"></span>
+        <p class="center">
+            &copy; 2012-2015 Ministerstvo spravedlnosti České republiky<br>
+            Verze aplikace: <span>6.45.1</span>
+        </p>
+    </div>
+    <p class="center noprint">
+        <span id="footer-logo-eu"></span>
+    </p>
+</div>
+</body>
+</html>

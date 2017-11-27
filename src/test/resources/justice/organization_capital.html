@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="cs" class="ff ff61">
+<head><script type="text/javascript" src="./wicket/resource/org.apache.wicket.resource.JQueryResourceReference/jquery/jquery-1.11.1.min-ver-8101D596B2B8FA35FE3A634EA342D7C3.js"></script>
+
+    <title>Veřejný rejstřík a Sbírka listin - Ministerstvo spravedlnosti České republiky</title>
+
+    <link rel="shortcut icon" href="./resource/images/favicon.ico" type="image/x-icon">
+
+    <!--
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+     -->
+
+    <link rel="stylesheet" href="./resource/css/reset.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/base.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/layout.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/drop-down-menu.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/columns.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/tables.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/forms.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/buttons.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/messages.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/icons.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/typo.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/search.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/vypis.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/tooltip.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/ias.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/ajax.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/intform.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/dynamic.css" media="screen">
+    <link rel="stylesheet" href="./resource/css/jquery-ui-1.8.17.custom.css" media="screen">
+
+    <link rel="stylesheet" href="./resource/css/print.css" media="print">
+
+    <script src="./resource/js/modernizr-latest.js"></script><!-- feature detection -->
+
+    <script>
+/*<![CDATA[*/
+
+			var APP = {
+				_ready : [],
+				_load : [],
+				run : function(fn,onload){var q=APP[onload?'_load':'_ready'];if(fn){if(q&&typeof q.push==='function'){q.push(fn);}else{fn();}}}
+			};
+
+/*]]>*/
+</script>
+    <script>
+/*<![CDATA[*/
+
+			APP.Strings = {
+				invalidAjaxResponse : 'CHYBA - při zpracování požadavku došlo k interní chybě.'
+			};
+
+/*]]>*/
+</script>
+
+    <script src="./resource/js/app-ias.js"></script>
+    <script src="./resource/js/app-tools.js"></script>
+    <script src="./resource/js/modules/drop-down-menu.js"></script>
+    <script src="./resource/js/modules/placeholder.js"></script>
+    <script src="./resource/js/modules/tooltip.js"></script>
+    <script src="./resource/js/modules/message-panel.js"></script>
+
+    <style type="text/css">
+/*<![CDATA[*/
+
+			/* CSS pre nove vypisy */
+			div.vr-hlavicka{font-weight:bold;}
+			.vr-child .vr-child div.vr-child {margin-left: 5mm}
+			.vr-child .vr-child div.vr-hlavicka {margin-left: 5mm}
+			.underline span {border-bottom: 1px solid black;}
+			.underline .nounderline {border-bottom-style: none}
+			.preformatted { white-space: pre-wrap; }
+
+/*]]>*/
+</style>
+
+    <!--[if lte IE 6 ]>
+    <script src="./resource/js/supersleight-min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-event-jquery.min-ver-7C4C4A31B92F211E7D61B1BF2BA81B39.js"></script>
+    <script type="text/javascript" src="./wicket/resource/org.apache.wicket.ajax.AbstractDefaultAjaxBehavior/res/js/wicket-ajax-jquery.min-ver-116260811FE9679D5DDCC60F7AE641BD.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./wicket/resource/cz.corpus.isror.ui.internet.InternetBasePage/basepage-ver-F0FB650D42CA79C149B4023B5F69BE5C.css" />
+    <script type="text/javascript" src="./wicket/resource/cz.corpus.grools.function.JavaScriptFunction/lib-ver-C67402F14ACFBAEEEE527DB7DC257D44.js"></script>
+    <script type="text/javascript" src="./wicket/resource/cz.corpus.isror.ui.internet.analytics.GoogleAnalyticsJs/google-analytics.js"></script>
+</head>
+<body>
+<div id="page">
+    <div id="page-h" class="noprint">
+        <a id="logo" href="./rejstrik-firma.vysledky?-1.ILinkListener-htmlContainer-logo&amp;subjektId=585818&amp;typ=PLATNY"></a>
+        <hr class="hidden">
+    </div>
+    <div id="page-c">
+        <div id="frag-rejstrik-switchComp-wholebead">
+
+
+
+            <div class="section">
+                <div class="vypis-h noprint">
+                    <div class="inner">
+
+                        <h1>
+                            <span>Výpis</span> z <span>nadačního rejstříku</span>
+                        </h1>
+                        <h2>
+                            <span>Nadace Partnerství (v mezinárodním styku &quot;Czech Environmental Partnership Foundation - CEPF)</span>, <span>N</span> <span>42</span> vedená u <span>Krajského soudu v Brně</span>
+                        </h2>
+
+                        <a class="vypis-print" onclick="print(); return false;" href="#">Vytisknout</a>
+                    </div>
+                </div>
+                <div class="section-c vypis-c">
+                    <div class="inner">
+                        <p class="noprint">
+                            <a href="./rejstrik-$firma?ico=00409430"><span>Zpět na výsledky hledání</span></a>
+                        </p>
+                        <div class="vypis-header print">
+                            <h2 class="center">Výpis</h2>
+                            <p class="center">
+                                z <span>nadačního rejstříku</span>, vedeného<br />
+                                <span>Krajským soudem v Brně</span><br /> oddíl <span>N</span>, vložka <span>42</span>
+                            </p>
+                        </div>
+                        <div>
+
+                            <div style="page-break-after: avoid">
+
+                                <div class="aunp-content">
+                                    <div class="aunp-udajPanel">
+                                        <div class="vr-hlavicka"><hr/></div>
+                                        <div class="div-table">
+                                            <div class="div-row">
+                                                <div class="div-cell w45mm">
+                                                    <div class="vr-hlavicka">Datum vzniku a zápisu:</div>
+                                                </div>
+                                                <div class="div-cell">
+                                                    <div>9. prosince 1998</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <table style="width:100%;">
+                                            <tr>
+                                                <td style="width:45mm; vertical-align:top;"><div class="vr-hlavicka" wicket:id="label">Datum zápisu:</div></td>
+                                                <td><div wicket:id="value"/></td>
+                                            </tr>
+                                        </table> -->
+
+                                    </div>
+
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Spisová značka: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                                <span style="white-space: nowrap;">N 42 vedená u Krajského soudu v Brně</span>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Název: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                                <span class="preformatted">Nadace Partnerství (v mezinárodním styku &quot;Czech Environmental Partnership Foundation - CEPF)</span>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Sídlo: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div id="id22">
+                                                                <div>
+	<span>
+		<span>Údolní 567/33, Brno-město, 602 00 Brno</span>
+
+	</span>
+
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Identifikační číslo: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                                <span class="nowrap">457<span style="margin-left: 0.5em"></span>73<span style="margin-left: 0.5em"></span>521</span>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Právní forma: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                                <span>Nadace</span>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Účel nadace: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+	<span class="preformatted">1. Posláním Nadace Partnerství je pomáhat nevládním organizacím,
+obcím a dalším partnerům v péči o životní prostředí, stimulovat
+trvale udržitelný rozvoj, mezisektorovou spolupráci a účast
+občanů na věcech veřejných.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+	<span class="preformatted">2. Nadace Partnerství je součástí konsorcia The Environmental
+Partnership for Central Europe ustaveného s cílem pomoci místním
+komunitám ve střední Evropě při budování demokracie a zlepšování
+životního prostředí. Hlásí se k tomuto zakladatelskému úmyslu
+jako k dlouhodbé součásti svého poslání.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+	<span class="preformatted">3. Nadace Partnerství podporuje projekty cílené na zlepšení
+životního prostředí a na trvale udržitelný rozvoj, a to
+prostřednictvím: a) grantového programu, b) organizováním stáží, c) vzdělávacích programů pro základní, střední a vysoké školy,
+d) celoživotního vzdělávání, e) podpory vědecké a výzkumné činnosti, f) zprostředkování technické pomoci, g) odborných informací, h) vlastních programů nadace. Nadace Partnerství napomáhá vytváření občanské společnosti a stabilní neziskové sféry v České republice a podílí se na mezinárodních programech odpovídajících jejímu poslání.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Správní rada: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>LADISLAV MIKO</span><span>, dat. nar. </span>
+		<span>9. dubna 1961</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Hlubočinka 978, 251 68 Sulice</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. května 2013</span></div>
+
+
+
+		<div><span class="preformatted"></span></div>
+
+
+		<div><span class="preformatted"></span></div>
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>RNDr. BLAŽENA HUŠKOVÁ</span><span>, dat. nar. </span>
+		<span>5. ledna 1960</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>č.p. 100, 463 31 Oldřichov v Hájích</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>30. září 2013</span></div>
+
+
+
+		<div><span class="preformatted"></span></div>
+
+
+		<div><span class="preformatted"></span></div>
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Mgr. VLADIMÍR KOŘEN</span><span>, dat. nar. </span>
+		<span>30. prosince 1973</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Ruská 1078/2, 251 01 Říčany</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>29. listopadu 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>PAVEL DOČEKAL</span><span>, dat. nar. </span>
+		<span>18. června 1969</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Neumannova 122/36, Pisárky, 602 00 Brno</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>29. listopadu 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">místopředsedkyně správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>MONIKA KAŠPAROVÁ</span><span>, dat. nar. </span>
+		<span>9. února 1978</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>U břízek 271, Podhůří, 543 03 Vrchlabí</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+		<div><span>Den vzniku funkce: </span><span>23. května 2015</span></div>
+
+
+
+		<div><span>Den vzniku členství: </span><span>23. května 2015</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>ČESTMÍR KLOS</span><span>, dat. nar. </span>
+		<span>25. července 1943</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Labská 59, 543 51 Špindlerův Mlýn</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. května 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>ANDREAS BECKMANN</span><span>, dat. nar. </span>
+		<span>10. prosince 1968</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Holland, Mi., Wolverine 1657, Spojené státy americké</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. května 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>JAN DUNGEL</span><span>, dat. nar. </span>
+		<span>23. března 1951</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Jasanová 836/3a, Jundrov, 637 00 Brno</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>29. listopadu 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Ing. JITKA KLINKEROVÁ</span><span>, dat. nar. </span>
+		<span>7. prosince 1964</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Smetanova 1320, 252 63 Roztoky</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+		<div><span>Den vzniku funkce: </span><span>24. května 2014</span></div>
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. května 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Ing. PETR HLOBIL</span><span>, dat. nar. </span>
+		<span>17. srpna 1966</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Nad Krocínkou 427/10, Prosek, 190 00 Praha 9</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. května 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Ing. ZDENĚK HOTAŘ</span><span>, dat. nar. </span>
+		<span>17. února 1957</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Generála Kadlece 2145/9, Řečkovice, 621 00 Brno</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>27. listopadu 2013</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">předseda správní rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Ing. JIŘÍ FRANCEK</span><span>, dat. nar. </span>
+		<span>3. listopadu 1955</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Lipenská 681, Šeberov, 149 00 Praha 4</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+		<div><span>Den vzniku funkce: </span><span>24. května 2014</span></div>
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. května 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">Počet členů: </span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span>12</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">Způsob jednání: </span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span class="preformatted">Způsob jednání jménem nadace: Za nadaci jedná a podpisuje předseda správní rady, místopředseda správní rady a ředitel, a to každý z nich samostatně.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Dozorčí rada: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Ing. JIŘÍ HRBÁČEK</span><span>, dat. nar. </span>
+		<span>10. srpna 1964</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>K tůni 773/1, Libuš, 142 00 Praha 4</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>24. listopadu 2011</span></div>
+
+
+
+		<div><span class="preformatted"></span></div>
+
+
+		<div><span class="preformatted"></span></div>
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">člen dozorčí rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>Ing. JAROSLAV KRATOCHVÍL</span><span>, dat. nar. </span>
+		<span>14. září 1951</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Kotlanova 2508/3a, Líšeň, 628 00 Brno</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+		<div><span>Den vzniku členství: </span><span>25. dubna 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell" colspan="2">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">předseda dozorčí rady: </span></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">&nbsp;</div>
+                                                                <div class="div-cell"><div>
+	<span>
+	<div>
+	<div>
+
+
+
+		<span>JUDr. JIŘÍ HARTMANN</span><span>, dat. nar. </span>
+		<span>16. března 1965</span>
+
+
+	</div>
+	<div>
+	<span>
+		<span>Nad spádem 206/9, Podolí, 147 00 Praha 4</span>
+
+	</span>
+
+
+
+
+</div>
+
+</div>
+
+
+		<div><span>Den vzniku funkce: </span><span>25. dubna 2014</span></div>
+
+
+
+		<div><span>Den vzniku členství: </span><span>25. dubna 2014</span></div>
+
+
+
+
+</span>
+                                                                </div></div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!--
+
+                                                        <table style="width:100%;">
+                                                            <tr>
+                                                                <td style="vertical-align:top;" colspan="2"><div class="vr-hlavicka"><span wicket:id="hlavicka" class="nounderline" /></div></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:45mm; vertical-align:top;">&nbsp;</td>
+                                                                <td><div wicket:id="udaj"/></td>
+                                                                <td style="width:45mm; vertical-align:top;" wicket:id="datumy">
+                                                                    <wicket:enclosure child="udaj.validFrom"><div><span>zapsáno&nbsp;<wicket:container wicket:id="udaj.validFrom"/></span></div></wicket:enclosure>
+                                                                    <wicket:enclosure child="udaj.validTo"><div><span>vymazáno&nbsp;<wicket:container wicket:id="udaj.validTo"/></span></div></wicket:enclosure>
+                                                                </td>
+                                                                <td style="width: 25mm; vertical-align: top; padding: 0px;" wicket:id="primaOpravaTools"></td>
+                                                            </tr>
+                                                        </table>  -->
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline">Počet členů: </span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span>3</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Zakladatel: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+	<span>
+	<span>
+
+	<div><span>The German Marshall Fund of the United States</span></div>
+	<div>
+	<span>
+		<span>11 Dupont Circle, Washington D.C. 20036, Spojené státy americké</span>
+
+	</span>
+
+
+
+
+</div>
+
+
+
+
+</span> <br />
+	<span class="preformatted"></span>
+</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Nadační kapitál: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                                <div>
+
+                                                                    <span> </span><span>171 409 283,76</span><span>Kč</span>
+
+                                                                </div>
+                                                                <div>
+
+                                                                    <span style="font-weight: bold;">Splaceno: </span><span> </span><span></span><span>,- Kč</span>
+
+                                                                </div>
+                                                                <div></div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Výčet majetku: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span class="preformatted">1.565.000,-Kč v nemovitosti - objektu fotovoltaické elektrárny, umístěné na pozemku Obce Hostětín, p.č. 712, v katastrálním území Hostětín. Podíl Nadace Partnerství na nemovitosti je stanoven ve výši id. 1565/4995. Cena stanovena znaleckým posudkem č. 3287-208-2/09, znalce Ing. Aleše Janáska.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span class="preformatted">165.000.000,- Kč v nemovitostech nacházejících se na adrese Údolní 33, Brno:- budova č.p. 567, bydlení, na parcele 728/1, bez č.p./č.e., obč. vyb. na parcele 728/2, bez č.p./č.e. garáž na parcele 728/3, bez č.p./č.e., adminis. na parcele 730/4, pozemky p.č. 727/1, 728/1, 728/2, 728/3, 728/4,730/1, 730/4 a 731/2 zapsané na listu vlastnictví č. 400 pro katastrální území Město Brno, část obce Brno-město, obec Brno, okres Brno-město u Katastrálního úřadu pro Jihomoravský kraj, katastrální pracoviště Brno-město. Cena stanovená znaleckým posudkem č. 261/2012 znalce Ing. Jiřího Ošlejška.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span class="preformatted">3 100 000,- Kč - státní spořící dluhopisy, č. ú. 802-808002381955, Česká spořitelna</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span class="preformatted">1 744 284,- Kč státní spořící dluhopisy České republiky</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="vr-child">
+
+                                        <div class="aunp-content">
+                                            <div class="aunp-udajPanel">
+                                                <div class="vr-hlavicka"><hr/></div>
+                                                <div class="div-table">
+                                                    <div class="div-row">
+                                                        <div class="div-cell w45mm">
+                                                            <div class="vr-hlavicka"><span class="nounderline">Ostatní skutečnosti: </span></div>
+                                                        </div>
+                                                        <div class="div-cell">
+                                                            <div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+	<span class="preformatted">Nadace byla zapsána do rejstříku nadací a nadačních fondů v
+souladu s § 35/1 z.č. 227/97 Sb., přechází na něj práva,
+povinnosti a závazky  &quot;Nadace Partnerství&quot;, zaregistrované
+22.12.1994,pod č.j. 1994/109/1 u Magistrátu města Brna.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+	<span class="preformatted">ředitel:
+RNDr. Miroslav Kundrata, rč 560131/0858
+bytem Brno , Údolní 58</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="vr-child" style="page-break-inside: avoid;">
+
+                                                <div class="aunp-content">
+                                                    <div class="aunp-udajPanel">
+                                                        <div class="vr-hlavicka"><hr/></div>
+                                                        <div class="div-table">
+                                                            <div class="div-row">
+                                                                <div class="div-cell w45mm">
+                                                                    <div class="vr-hlavicka"><span class="nounderline"></span></div>
+                                                                </div>
+                                                                <div class="div-cell">
+                                                                    <div>
+                                                                        <span class="preformatted">Na nadaci přešlo jako na právního nástupce jmění slučovaného Nadačního fondu Josefa a Petry Vavrouškových, se sídlem v Unhošti, Na bílé pěšině 653, 273 51, IČ 63836131.</span>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fr noprint">
+                            <a class="vypis-pdf" href="./print-pdf?subjektId=585818&amp;typVypisu=PLATNY&amp;full=false">Stáhnout PDF verzi výpisu</a>
+                        </p>
+                        <p>
+                            <strong>Tento výpis je neprodejný a byl pořízen na
+                                Internetu</strong> (<a href="http://www.justice.cz/">http://www.justice.cz</a>).<br/>
+                            Dne: <span>12.11.2017 11:12</span><br/> Údaje platné ke dni <span>12.11.2017 06:19</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="page-f" class="noprint">
+        <div id="page-f-links">
+            <ul class="links1">
+                <li><a href="./napoveda">Jak na to?</a></li>
+                <li><a href="./podminky">Podmínky provozu</a></li>
+                <li><a href="./soudy">Rejstříkové soudy</a></li>
+                <li><a
+                        href="http://upadci.justice.cz/cgi-bin/sqw1250.cgi/upkuk/s_i8.sqw">Evidence
+                    úpadců</a></li>
+                <li><a href="https://isir.justice.cz/isir/common/index.do">Insolvenční
+                    rejstřík</a></li>
+            </ul>
+            <ul class="links2">
+                <li><a href="./rejstrik-$firma">Veřejný rejstřík podle
+                    subjektů</a></li>
+                <li><a href="./rejstrik-$spolecnici">Veřejný rejstřík podle
+                    právnických osob v angažmá</a></li>
+                <li><a href="./rejstrik-$osoba">Veřejný rejstřík podle
+                    fyzických osob v angažmá</a></li>
+                <li><a href="./zr">Automatické aktualizace ze
+                    základních registrů</a></li>
+                <li><a href="./podani">Podání do veřejného rejstříku</a></li>
+            </ul>
+            <ul class="links3">
+                <li><a href="./evypisy">Co s elektronickým výpisem</a></li>
+                <li><a href="http://www.businessinfo.cz/">Portál pro
+                    podnikatele: BusinessInfo.cz</a></li>
+                <li><a
+                        href="http://www.businessinfo.cz/cs/clanky/obchodni-spolecnosti-zalozeni-vznik-opu-13164.html">Průvodce:
+                    Jak založit firmu / společnost</a></li>
+                <li><a
+                        href="http://www.komora.cz/hk-cr/inmp/lang_1/Default.aspx">Informační
+                    místa pro podnikatele</a></li>
+                <li><a href="./podpora">Technická podpora</a></li>
+            </ul>
+        </div>
+        <span id="footer-logo"></span>
+        <p class="center">
+            &copy; 2012-2015 Ministerstvo spravedlnosti České republiky<br>
+            Verze aplikace: <span>6.45.1</span>
+        </p>
+    </div>
+    <p class="center noprint">
+        <span id="footer-logo-eu"></span>
+    </p>
+</div>
+</body>
+</html>

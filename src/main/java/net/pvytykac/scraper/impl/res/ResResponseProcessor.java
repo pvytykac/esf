@@ -6,11 +6,10 @@ import net.pvytykac.scraper.impl.ScrapeResult;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-import javax.xml.xpath.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,34 +22,33 @@ import static net.pvytykac.scraper.impl.res.Organization.OrganizationBuilder;
  */
 public final class ResResponseProcessor implements ResponseProcessor<Organization> {
 
-    private static final XPathExpression IdXp;
-    private static final XPathExpression IcoXp;
-    private static final XPathExpression NameXp;
-    private static final XPathExpression SpfXp;
-    private static final XPathExpression FromXp;
-    private static final XPathExpression ToXp;
-    private static final XPathExpression AddrXp;
-    private static final XPathExpression DcXp;
-    private static final XPathExpression DXp;
-    private static final XPathExpression ZujcXp;
-    private static final XPathExpression ZujXp;
-    private static final XPathExpression AttrXp;
+    private static final String IdXp;
+    private static final String IcoXp;
+    private static final String NameXp;
+    private static final String SpfXp;
+    private static final String FromXp;
+    private static final String ToXp;
+    private static final String AddrXp;
+    private static final String DcXp;
+    private static final String DXp;
+    private static final String ZujcXp;
+    private static final String ZujXp;
+    private static final String AttrXp;
 
     static {
         try {
-            XPath xpf = XPathFactory.newInstance().newXPath();
-            IdXp = xpf.compile("//form[@name='form_detail']/input[@name='vypis']/@onclick");
-            IcoXp = xpf.compile("//table[@summary='identifikace']/tr[1]/td[last()]/strong");
-            NameXp = xpf.compile("//table[@summary='identifikace']/tr[2]/td[last()]/strong");
-            SpfXp = xpf.compile("//table[@summary='identifikace']/tr[3]/td[last()]");
-            FromXp = xpf.compile("//table[@summary='vznik a zanik']/tr[1]/td[last()]");
-            ToXp = xpf.compile("//table[@summary='vznik a zanik']/tr[2]/td[last()]");
-            AddrXp = xpf.compile("//table[@summary='adresa']/tr[1]/td[last()]");
-            DcXp = xpf.compile("//table[@summary='adresa-kody']/tr[1]/td[last() - 2]");
-            DXp = xpf.compile("//table[@summary='adresa-kody']/tr[1]/td[last()]");
-            ZujcXp = xpf.compile("//table[@summary='adresa-kody']/tr[2]/td[last() - 2 ]");
-            ZujXp = xpf.compile("//table[@summary='adresa-kody']/tr[2]/td[last()]");
-            AttrXp = xpf.compile("//table[@summary='atributy']/tr[position() > 1]");
+            IdXp = "form[name=\"form_detail\"] input[name=\"vypis\"]";
+            IcoXp = "table[summary=\"identifikace\"] tr:nth-child(1) td:last-child strong";
+            NameXp = "table[summary=\"identifikace\"] tr:nth-child(2) td:last-child strong";
+            SpfXp = "table[summary=\"identifikace\"] tr:nth-child(3) td:last-child";
+            FromXp = "table[summary=\"vznik a zanik\"] tr:nth-child(1) td:last-child";
+            ToXp = "table[summary=\"vznik a zanik\"] tr:nth-child(2) td:last-child";
+            AddrXp = "table[summary=\"adresa\"] tr:nth-child(1) td:last-child";
+            DcXp = "table[summary=\"adresa-kody\"] tr:nth-child(1) td:nth-last-child(3)";
+            DXp = "table[summary=\"adresa-kody\"] tr:nth-child(1) td:last-child";
+            ZujcXp = "table[summary=\"adresa-kody\"] tr:nth-child(2) td:nth-last-child(3)";
+            ZujXp = "table[summary=\"adresa-kody\"] tr:nth-child(2) td:last-child";
+            AttrXp = "table[summary=\"atributy\"] tr:not(:first-child)";
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
@@ -64,35 +62,35 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
         if (statusLine.getStatusCode() == 200) {
             try {
                 Document document = ResponseUtil.buildDocument(response);
-                String ico = IcoXp.evaluate(document);
+                String ico = document.select(IcoXp).text();
 
                 if (StringUtils.isBlank(ico)) {
                     result = new ScrapeResult<>(new ScrapeResult.ScrapeError(0, "entity does not exist"));
                 } else {
-                    String id = IdXp.evaluate(document);
-                    String[] form = split(SpfXp.evaluate(document), " - ", 2);
-                    Date created = parseDate(FromXp.evaluate(document));
-                    Date ceased = parseDate(ToXp.evaluate(document));
+                    String id = document.select(IdXp).attr("onclick");
+                    String[] form = split(document.select(SpfXp).text(), " - ", 2);
+                    Date created = parseDate(document.select(FromXp).text());
+                    Date ceased = parseDate(document.select(ToXp).text());
 
                     OrganizationBuilder organization = new OrganizationBuilder()
                             .setId(Integer.valueOf(id.substring(id.indexOf("prajed_id=") + 10).split("&")[0]))
                             .setIco(ico)
-                            .setName(NameXp.evaluate(document))
+                            .setName(document.select(NameXp).text())
                             .setForm(form[0], form[1])
-                            .setAddress(AddrXp.evaluate(document))
+                            .setAddress(document.select(AddrXp).text())
                             .setCreated(created)
                             .setCeased(ceased)
-                            .setDistrict(DcXp.evaluate(document), DXp.evaluate(document))
-                            .setTerritory(ZujcXp.evaluate(document), ZujXp.evaluate(document));
+                            .setDistrict(document.select(DcXp).text(), document.select(DXp).text())
+                            .setTerritory(document.select(ZujcXp).text(), document.select(ZujXp).text());
 
-                    NodeList attrNodeSet = (NodeList) AttrXp.evaluate(document, XPathConstants.NODESET);
+                    Elements attrNodeSet = document.select(AttrXp);
                     String prevAttr = null;
-                    for (int i = 0; i < attrNodeSet.getLength(); i++) {
-                        Node node = attrNodeSet.item(i);
+                    for (int i = 0; i < attrNodeSet.size(); i++) {
+                        Element element = attrNodeSet.get(i);
 
-                        String attr = node.getChildNodes().item(1).getTextContent().trim();
-                        String code = node.getChildNodes().item(3).getTextContent().trim();
-                        String value = node.getChildNodes().item(5).getTextContent().trim();
+                        String attr = element.select("td:first-child a").text();
+                        String code = element.select("td:nth-child(2)").text();
+                        String value = element.select("td:last-child").text();
                         organization.addAttributes(StringUtils.isBlank(attr) ? prevAttr : attr, code, value);
 
                         if ("Činnosti - dle CZ-NACE".equalsIgnoreCase(attr) && form[0] == null) {
@@ -106,8 +104,6 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
 
                     result = new ScrapeResult<>(organization.build());
                 }
-            } catch (XPathExpressionException ex) {
-                result = new ScrapeResult<>(new ScrapeResult.ScrapeError(0, "xpath error"));
             } catch (ParseException ex) {
                 result = new ScrapeResult<>(new ScrapeResult.ScrapeError(5, "error when parsing date"));
             }
@@ -119,7 +115,8 @@ public final class ResResponseProcessor implements ResponseProcessor<Organizatio
     }
 
     private Date parseDate(String date) throws ParseException {
-        return StringUtils.isBlank(date) ? null : new SimpleDateFormat("dd.MM.yyyy").parse(date);
+        String processed = date.replace("\u00a0","");
+        return StringUtils.isBlank(processed) ? null : new SimpleDateFormat("dd.MM.yyyy").parse(processed);
     }
 
     private static String[] split(String original, String separator, int size) {

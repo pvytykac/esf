@@ -4,8 +4,8 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.w3c.dom.Document;
-import org.xml.sax.InputSource;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStreamReader;
@@ -60,7 +60,7 @@ public final class ResponseUtil {
             HttpEntity entity = response.getEntity();
             InputStreamReader in = new InputStreamReader(entity.getContent(), getEncoding(response));
 
-            return DBF.newDocumentBuilder().parse(new InputSource(in));
+            return Jsoup.parse(entity.getContent(), getEncoding(response), "");
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }

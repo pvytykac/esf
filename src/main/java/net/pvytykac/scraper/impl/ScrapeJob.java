@@ -27,8 +27,8 @@ public final class ScrapeJob<T> {
 
     private static final PoolingHttpClientConnectionManager CM = new PoolingHttpClientConnectionManager();
     static {
-        CM.setMaxTotal(10);
-        CM.setDefaultMaxPerRoute(10);
+        CM.setMaxTotal(1);
+        CM.setDefaultMaxPerRoute(1);
     }
 
     private static final HttpClient HTTP = HttpClients
@@ -41,7 +41,6 @@ public final class ScrapeJob<T> {
                     .build()
             )
             .disableAuthCaching()
-            .disableCookieManagement()
             .disableRedirectHandling()
             .setUserAgent("pv-scraper")
             .build();
@@ -59,7 +58,9 @@ public final class ScrapeJob<T> {
     public final void loop() {
         try {
             while (!strategy.isDone()) {
+                LOG.trace("Waiting for semaphore");
                 semaphore.acquire();
+                LOG.trace("Acquired semaphore");
                 pool.submit(() -> {
                     try {
                         Scrape<T> scrape = strategy.getNext();
@@ -70,6 +71,7 @@ public final class ScrapeJob<T> {
                             int retries = processed.getError().getRetries();
                             int retried = 0;
                             while (processed.isError() && (processed.getError().getRetries() < 0 || retried < retries)) {
+                                Thread.sleep(60000L * 5);
                                 LOG.debug("retry #{} for request {}", ++retried, request);
                                 processed = doRequest(request);
                             }
@@ -81,9 +83,12 @@ public final class ScrapeJob<T> {
 
                         processed.ifError(error -> LOG.info("error for request {} -> {}", request, error));
                         result.ifPresent(t -> scrape.getScrapeHandlers().forEach(handler -> handler.handleResult(t)));
+
+                        LOG.debug("processed scrape: {}, result: {}", scrape.getId(), result.orElse(null));
                     } catch (Exception ex) {
                         LOG.error("exception caught", ex);
                     } finally {
+                        LOG.trace("Releasing semaphore");
                         semaphore.release();
                     }
                 });

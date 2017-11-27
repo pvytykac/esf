@@ -15,10 +15,10 @@ public class Organization {
 	private final String purpose;
 	private final List<Document> documents;
 	private final Integer associations;
-	private final Integer capital;
+	private final Double capital;
 
 	public Organization(String id, String ico, String name, String form, String address, Date created, Date entered,
-			String purpose, List<Document> documents, Integer associations, Integer capital) {
+			String purpose, List<Document> documents, Integer associations, Double capital) {
 		this.id = id;
 		this.ico = ico;
 		this.name = name;
@@ -72,7 +72,7 @@ public class Organization {
 		return associations;
 	}
 
-	public Integer getCapital() {
+	public Double getCapital() {
 		return capital;
 	}
 
@@ -95,9 +95,10 @@ public class Organization {
 		private final Date registered;
 		private final Integer pages;
 		private final Boolean digitalized;
+		private final String url;
 
 		public Document(Integer id, Integer folderId, String name, String type, Date created, Date delivered,
-				Date registered, Integer pages, Boolean digitalized) {
+				Date registered, Integer pages, Boolean digitalized, String url) {
 			this.id = id;
 			this.folderId = folderId;
 			this.name = name;
@@ -107,6 +108,7 @@ public class Organization {
 			this.registered = registered;
 			this.pages = pages;
 			this.digitalized = digitalized;
+			this.url = url;
 		}
 
 		public Integer getId() {
@@ -145,11 +147,24 @@ public class Organization {
 			return digitalized;
 		}
 
+		public String getUrl() {
+			return url;
+		}
+
 		@Override
 		public String toString() {
-			return "Document{" + "id=" + id + ", folderId=" + folderId + ", name='" + name + '\'' + ", type='" + type
-					+ '\'' + ", created=" + created + ", delivered=" + delivered + ", registered=" + registered
-					+ ", pages=" + pages + ", digitalized=" + digitalized + '}';
+			return "Document{" +
+					"id=" + id +
+					", folderId=" + folderId +
+					", name='" + name + '\'' +
+					", type='" + type + '\'' +
+					", created=" + created +
+					", delivered=" + delivered +
+					", registered=" + registered +
+					", pages=" + pages +
+					", digitalized=" + digitalized +
+					", url='" + url + '\'' +
+					'}';
 		}
 	}
 
